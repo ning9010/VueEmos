@@ -7,10 +7,16 @@ import geojson from "@/geojson/深圳0125.json";
 export default {
   name: "BaiduMap",
   mounted() {
-    var map = new window.BMapGL.Map("container");
+    var map = new window.BMapGL.Map("container", {
+      enableRotate: false,
+      enableTilt: false,
+    });
     var point = new window.BMapGL.Point("113.86700", "22.81792");
     map.centerAndZoom(point, 14);
     map.enableScrollWheelZoom();
+    // map.setHeading(64.5); //设置地图旋转角度
+    // map.setTilt(73); //设置地图的倾斜角度
+    map.setMapType(BMAP_SATELLITE_MAP);
 
     var scaleCtrl = new window.BMapGL.ScaleControl();
     map.addControl(scaleCtrl);
