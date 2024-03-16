@@ -1,22 +1,29 @@
-// import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from "vue-router";
+import NotFound from "@/pages/404.vue";
+import Complaint from "@/pages/complaint/index.vue";
+import Index from "@/layouts/index.vue";
+const routes = [
+  {
+    path: "/",
+    name: "index",
+    component: Index,
+    children: [
+      {
+        path: "/",
+        name: "complaint",
+        component: Complaint,
+      },
+    ],
+  },
+  // {
+  //   path: "/login",
+  //   component: Login,
+  // },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
+];
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+});
 
-// const router = createRouter({
-//   history: createWebHistory(import.meta.env.BASE_URL),
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'home',
-//       component: HomeView
-//     },
-//     {
-//       path: '/about',
-//       name: 'about',
-//       // route level code-splitting
-//       // this generates a separate chunk (About.[hash].js) for this route
-//       // which is lazy-loaded when the route is visited.
-//       // component: () => import('../views/AboutView.vue')
-//     }
-//   ]
-// })
-
-// export default router
+export default router;
