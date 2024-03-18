@@ -11,11 +11,14 @@
   "dependencies": {
     "element-plus": "^2.6.1",
     "vue": "^3.4.15",
-    "vue-router": "^4.2.5",
-    "vue3-baidu-map-gl": "^2.3.2"
+    "vue-router": "^4.0.13",
+    "vue3-baidu-map-gl": "^2.3.2",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
-    "vite": "^5.0.11"
+    "vite": "^5.0.11",
+    "vite-plugin-windicss": "^1.9.3",
+    "windicss": "^3.5.6"
   }
 }
