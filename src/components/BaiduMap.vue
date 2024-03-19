@@ -35,6 +35,49 @@ export default {
       });
       map.addOverlay(polyline);
     }
+
+    function createDOM(feature) {
+      const img = document.createElement('img');
+      img.style.height = '240px';
+      img.style.width = '80px';
+      img.src = 'https://bj.bcebos.com/v1/mapopen-pub-jsapigl/assets/images/fire.gif';
+      img.draggable = false;
+      return img;
+    }
+
+    // 自定义图层
+    const cusLayer = new BMapGL.CustomHtmlLayer(createDOM, {
+      offsetX: 0,
+      offsetY: 0,
+      minZoom: 12,
+      maxZoom: 20,
+      enablePick: true,
+      enableDraggingMap: true
+    });
+
+    const data = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [113.86700, 22.81792]
+          },
+          "properties": { "prop0": "value0" }
+        }
+      ]
+    };
+    // 设置图层数据
+    cusLayer.setData(data);
+
+    // 将自定义html图层添加到地图上
+    map.addCustomHtmlLayer(cusLayer);
+
+    // 覆盖物绑定点击事件
+    cusLayer.addEventListener('click', function (e) {
+      console.log('e:', e)
+    });
   },
 };
 </script>
