@@ -30,8 +30,8 @@ export default {
     for (var i = 0; i < baiduData.length; i++) {
       var polyline = new BMapGL.Polyline(baiduData[i], {
         strokeColor: "blue",
-        strokeWeight: 2,
-        strokeOpacity: 0.5,
+        strokeWeight: 4,
+        strokeOpacity: 0.3,
       });
       map.addOverlay(polyline);
     }
@@ -41,7 +41,9 @@ export default {
 <style scoped>
 .bmap {
   width: 100%;
-  height: 100%;
+
+  height: 850px;
+
   border: 1px solid #000;
   margin-left: 12px;
 }

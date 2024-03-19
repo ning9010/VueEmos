@@ -20,8 +20,8 @@ export function GeoJsonToBaiduMap(geoJSON) {
       for (var k = 0; k < coordinates.length; k++) {
         for (var l = 0; l < coordinates[k].length; l++) {
           arr.push({
-            lng: coordinates[k][l][0],
-            lat: coordinates[k][l][1],
+            lng: coordinates[k][l][0] + 0.0115946,
+            lat: coordinates[k][l][1] + 0.0027177,
           });
         }
       }
