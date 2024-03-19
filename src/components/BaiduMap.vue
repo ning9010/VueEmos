@@ -41,7 +41,9 @@ export default {
 <style scoped>
 .bmap {
   width: 100%;
+
   height: 850px;
+
   border: 1px solid #000;
   margin-left: 12px;
 }
